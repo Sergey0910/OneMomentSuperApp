@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneMoment Guest App - Auth Screens 001-004</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            color: white;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .screens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+            gap: 30px;
+        }
+        
+        .phone-mockup {
+            background: #000;
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .phone-mockup:hover {
+            transform: translateY(-10px);
+        }
+        
+        .phone-screen {
+            background: white;
+            border-radius: 30px;
+            height: 700px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        /* Screen 001: Splash */
+        #screen-001 .phone-screen {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo-container {
+            width: 150px;
+            height: 150px;
+            background: white;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+        
+        .app-name {
+            color: white;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            color: rgba(255,255,255,0.8);
+            font-size: 14px;
+            margin-bottom: 40px;
+        }
+        
+        .progress-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: white;
+            animation: loading 3s ease-out;
+        }
+        
+        @keyframes loading {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+        
+        /* Screen 002: Phone Login */
+        #screen-002 .phone-screen {
+            padding: 40px 20px;
+        }
+        
+        .back-btn {
+            width: 40px;
+            height: 40px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+        
+        .auth-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .auth-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .country-selector {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            background: #f8f8f8;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .flag {
+            width: 30px;
+            height: 20px;
+            background: linear-gradient(to bottom, white 33%, blue 33% 66%, red 66%);
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+        
+        .phone-input-container {
+            display: flex;
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .country-code {
+            color: #666;
+            margin-right: 10px;
+        }
+        
+        .phone-input {
+            flex: 1;
+            border: none;
+            background: none;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .continue-btn {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .continue-btn:active {
+            transform: scale(0.98);
+        }
+        
+        .terms-text {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            margin-top: 30px;
+            line-height: 1.5;
+        }
+        
+        .terms-text a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        /* Screen 003: OTP */
+        #screen-003 .phone-screen {
+            padding: 40px 20px;
+        }
+        
+        .otp-container {
+            margin-bottom: 40px;
+        }
+        
+        .otp-inputs {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .otp-input {
+            width: 50px;
+            height: 60px;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 24px;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+        
+        .otp-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        .otp-input.filled {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+        
+        .resend-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .timer {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .resend-link {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        
+        /* Screen 004: Home */
+        #screen-004 .phone-screen {
+            background: #f8f9fa;
+            padding: 0;
+        }
+        
+        .home-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px 30px;
+            border-radius: 0 0 30px 30px;
+        }
+        
+        .user-greeting {
+            color: white;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .user-name {
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        
+        .quick-stats {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .stat-card {
+            flex: 1;
+            background: rgba(255,255,255,0.2);
+            padding: 12px;
+            border-radius: 12px;
+        }
+        
+        .stat-value {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .stat-label {
+            color: rgba(255,255,255,0.8);
+            font-size: 12px;
+        }
+        
+        .home-content {
+            padding: 20px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .service-name {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .service-desc {
+            font-size: 12px;
+            color: #999;
+        }
+        
+        .promo-banner {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffd93d 100%);
+            border-radius: 16px;
+            padding: 20px;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .promo-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .promo-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .bottom-nav {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-top: 1px solid #eee;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0 20px;
+        }
+        
+        .nav-item {
+            text-align: center;
+            color: #999;
+            font-size: 12px;
+            cursor: pointer;
+        }
+        
+        .nav-item.active {
+            color: #667eea;
+        }
+        
+        .nav-icon {
+            width: 24px;
+            height: 24px;
+            margin: 0 auto 5px;
+            background: currentColor;
+            mask-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 OneMoment Guest App - Authentication Flow</h1>
+        
+        <div class="screens-grid">
+            <!-- Screen 001: Splash -->
+            <div class="phone-mockup" id="screen-001">
+                <div class="phone-screen">
+                    <div class="logo-container">
+                        <span style="font-size: 48px;">🌐</span>
+                    </div>
+                    <div class="app-name">OneMoment</div>
+                    <div class="tagline">Break Language Barriers</div>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 001: Splash</h3>
+            </div>
+            
+            <!-- Screen 002: Phone Login -->
+            <div class="phone-mockup" id="screen-002">
+                <div class="phone-screen">
+                    <div class="back-btn">←</div>
+                    <h2 class="auth-title">Welcome to OneMoment</h2>
+                    <p class="auth-subtitle">Enter your phone number to continue</p>
+                    
+                    <div class="country-selector">
+                        <div class="flag"></div>
+                        <span>Russia</span>
+                        <span style="margin-left: auto;">▼</span>
+                    </div>
+                    
+                    <div class="phone-input-container">
+                        <span class="country-code">+7</span>
+                        <input type="tel" class="phone-input" placeholder="999 123 45 67">
+                    </div>
+                    
+                    <button class="continue-btn">Continue</button>
+                    
+                    <p class="terms-text">
+                        By continuing, you agree to our<br>
+                        <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </p>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 002: Phone Login</h3>
+            </div>
+            
+            <!-- Screen 003: OTP -->
+            <div class="phone-mockup" id="screen-003">
+                <div class="phone-screen">
+                    <div class="back-btn">←</div>
+                    <h2 class="auth-title">Verification Code</h2>
+                    <p class="auth-subtitle">We've sent a code to +7 999 123 45 67</p>
+                    
+                    <div class="otp-container">
+                        <div class="otp-inputs">
+                            <input type="text" class="otp-input filled" value="5" maxlength="1">
+                            <input type="text" class="otp-input filled" value="8" maxlength="1">
+                            <input type="text" class="otp-input filled" value="3" maxlength="1">
+                            <input type="text" class="otp-input filled" value="9" maxlength="1">
+                            <input type="text" class="otp-input" maxlength="1">
+                            <input type="text" class="otp-input" maxlength="1">
+                        </div>
+                    </div>
+                    
+                    <div class="resend-container">
+                        <p class="timer">Resend code in 0:47</p>
+                        <a href="#" class="resend-link">Didn't receive code?</a>
+                    </div>
+                    
+                    <button class="continue-btn">Verify & Continue</button>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 003: OTP Verification</h3>
+            </div>
+            
+            <!-- Screen 004: Home -->
+            <div class="phone-mockup" id="screen-004">
+                <div class="phone-screen">
+                    <div class="home-header">
+                        <p class="user-greeting">Good morning</p>
+                        <h2 class="user-name">Sergey 👋</h2>
+                        <div class="quick-stats">
+                            <div class="stat-card">
+                                <div class="stat-value">3</div>
+                                <div class="stat-label">Active Orders</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-value">150</div>
+                                <div class="stat-label">TON Balance</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="home-content">
+                        <h3 class="section-title">Services</h3>
+                        <div class="service-grid">
+                            <div class="service-card">
+                                <div class="service-icon">🍽️</div>
+                                <div class="service-name">Restaurant</div>
+                                <div class="service-desc">Order & Pay</div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-icon">🏨</div>
+                                <div class="service-name">Hotel</div>
+                                <div class="service-desc">Book & Check-in</div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-icon">📱</div>
+                                <div class="service-name">eSIM</div>
+                                <div class="service-desc">Stay Connected</div>
+                            </div>
+                            <div class="service-card">
+                                <div class="service-icon">🌍</div>
+                                <div class="service-name">Translator</div>
+                                <div class="service-desc">Break Barriers</div>
+                            </div>
+                        </div>
+                        
+                        <div class="promo-banner">
+                            <div class="promo-title">🎉 Special Offer</div>
+                            <div class="promo-text">Get 20% off your first order with TON</div>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-nav">
+                        <div class="nav-item active">
+                            <div class="nav-icon"></div>
+                            <span>Home</span>
+                        </div>
+                        <div class="nav-item">
+                            <div class="nav-icon"></div>
+                            <span>Orders</span>
+                        </div>
+                        <div class="nav-item">
+                            <div class="nav-icon"></div>
+                            <span>Wallet</span>
+                        </div>
+                        <div class="nav-item">
+                            <div class="nav-icon"></div>
+                            <span>Profile</span>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 004: Home Dashboard</h3>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Auto-fill OTP animation
+        setTimeout(() => {
+            const inputs = document.querySelectorAll('#screen-003 .otp-input');
+            const values = ['5', '8', '3', '9', '2', '1'];
+            inputs.forEach((input, i) => {
+                setTimeout(() => {
+                    input.value = values[i];
+                    input.classList.add('filled');
+                }, i * 200);
+            });
+        }, 1000);
+        
+        // Service cards click effect
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

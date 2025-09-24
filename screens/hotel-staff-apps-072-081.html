@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneMoment Hotel Staff Apps - Screens 072-081</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #8E24AA 0%, #3F51B5 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1800px; margin: 0 auto; }
+        h1 { color: white; text-align: center; margin-bottom: 30px; font-size: 2.5em; }
+        .screens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+            gap: 30px;
+        }
+        .phone-mockup {
+            background: #000;
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .phone-screen {
+            background: white;
+            border-radius: 30px;
+            height: 700px;
+            overflow: hidden;
+            position: relative;
+        }
+        .concierge-header {
+            background: linear-gradient(135deg, #8E24AA 0%, #3F51B5 100%);
+            padding: 20px;
+            color: white;
+        }
+        .housekeeping-header {
+            background: linear-gradient(135deg, #00BCD4 0%, #009688 100%);
+            padding: 20px;
+            color: white;
+        }
+        .roomservice-header {
+            background: linear-gradient(135deg, #FF5722 0%, #E91E63 100%);
+            padding: 20px;
+            color: white;
+        }
+        .content { padding: 20px; }
+        .request-card {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        .priority-high {
+            border-left: 4px solid #F44336;
+        }
+        .priority-medium {
+            border-left: 4px solid #FF9800;
+        }
+        .priority-low {
+            border-left: 4px solid #4CAF50;
+        }
+        .room-card {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 2px solid #e0e0e0;
+        }
+        .status-clean { background: #E8F5E9; color: #2E7D32; }
+        .status-dirty { background: #FFEBEE; color: #C62828; }
+        .status-cleaning { background: #FFF8E1; color: #F57C00; }
+        .menu-category {
+            background: #f8f8f8;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+        .menu-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #8E24AA 0%, #3F51B5 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .chat-message {
+            padding: 12px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            max-width: 80%;
+        }
+        .message-guest {
+            background: #E3F2FD;
+            margin-right: auto;
+        }
+        .message-concierge {
+            background: #F3E5F5;
+            margin-left: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏨 Hotel Staff Applications</h1>
+        
+        <div class="screens-grid">
+            <!-- CONCIERGE APP -->
+            <!-- Screen 072: Concierge Dashboard -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="concierge-header">
+                        <h2>Concierge Dashboard</h2>
+                        <p style="font-size: 14px; opacity: 0.9;">Active Requests: 5</p>
+                    </div>
+                    <div class="content">
+                        <div class="request-card priority-high">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-weight: bold;">Room 512</span>
+                                <span style="background: #F44336; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">URGENT</span>
+                            </div>
+                            <p style="color: #666; margin-bottom: 10px;">Restaurant reservation for 4 people tonight</p>
+                            <button style="background: #8E24AA; color: white; border: none; padding: 8px 16px; border-radius: 6px;">Handle Request</button>
+                        </div>
+                        <div class="request-card priority-medium">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-weight: bold;">Room 308</span>
+                                <span style="background: #FF9800; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">MEDIUM</span>
+                            </div>
+                            <p style="color: #666; margin-bottom: 10px;">Need taxi to airport tomorrow 6 AM</p>
+                            <button style="background: #8E24AA; color: white; border: none; padding: 8px 16px; border-radius: 6px;">Handle Request</button>
+                        </div>
+                        <div class="request-card priority-low">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-weight: bold;">Room 701</span>
+                                <span style="background: #4CAF50; color: white; padding: 2px 8px; border-radius: 4px; font-size: 12px;">LOW</span>
+                            </div>
+                            <p style="color: #666; margin-bottom: 10px;">Recommendations for local attractions</p>
+                            <button style="background: #8E24AA; color: white; border: none; padding: 8px 16px; border-radius: 6px;">Handle Request</button>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 072: Concierge Dashboard</h3>
+            </div>
+
+            <!-- Screen 073: Guest Chat -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="concierge-header">
+                        <h2>Room 512 - Guest Chat</h2>
+                        <p style="font-size: 14px; opacity: 0.9;">Mr. Johnson</p>
+                    </div>
+                    <div style="flex: 1; padding: 20px; overflow-y: auto;">
+                        <div class="chat-message message-guest">
+                            <p style="font-size: 12px; color: #666; margin-bottom: 5px;">Guest</p>
+                            <p>Hi, I need a table for 4 at a good Italian restaurant tonight</p>
+                        </div>
+                        <div class="chat-message message-concierge">
+                            <p style="font-size: 12px; color: #666; margin-bottom: 5px;">Concierge</p>
+                            <p>Of course! I recommend Bella Vista, excellent Italian cuisine. What time would you prefer?</p>
+                        </div>
+                        <div class="chat-message message-guest">
+                            <p style="font-size: 12px; color: #666; margin-bottom: 5px;">Guest</p>
+                            <p>8 PM would be perfect</p>
+                        </div>
+                        <div class="chat-message message-concierge">
+                            <p style="font-size: 12px; color: #666; margin-bottom: 5px;">Concierge</p>
+                            <p>I'll make the reservation for 8 PM. I'll send confirmation shortly.</p>
+                        </div>
+                    </div>
+                    <div style="padding: 20px; border-top: 1px solid #e0e0e0;">
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" placeholder="Type message..." style="flex: 1; padding: 12px; border: 1px solid #e0e0e0; border-radius: 8px;">
+                            <button style="background: #8E24AA; color: white; border: none; padding: 12px 20px; border-radius: 8px;">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 073: Guest Chat</h3>
+            </div>
+
+            <!-- Screen 074: Local Recommendations -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="concierge-header">
+                        <h2>Local Recommendations</h2>
+                    </div>
+                    <div class="content">
+                        <div style="display: grid; gap: 15px;">
+                            <div style="background: #f8f8f8; padding: 15px; border-radius: 12px;">
+                                <h3>🍴 Restaurants</h3>
+                                <div style="margin-top: 10px;">
+                                    <p style="font-weight: bold;">Bella Vista</p>
+                                    <p style="font-size: 12px; color: #666;">Italian • $$$ • 4.8★</p>
+                                </div>
+                                <div style="margin-top: 10px;">
+                                    <p style="font-weight: bold;">The Spice Route</p>
+                                    <p style="font-size: 12px; color: #666;">Indian • $$ • 4.7★</p>
+                                </div>
+                            </div>
+                            <div style="background: #f8f8f8; padding: 15px; border-radius: 12px;">
+                                <h3>🎭 Attractions</h3>
+                                <div style="margin-top: 10px;">
+                                    <p style="font-weight: bold;">City Museum</p>
+                                    <p style="font-size: 12px; color: #666;">10 min walk • Open till 8 PM</p>
+                                </div>
+                                <div style="margin-top: 10px;">
+                                    <p style="font-weight: bold;">Old Town Market</p>
+                                    <p style="font-size: 12px; color: #666;">15 min taxi • Best in morning</p>
+                                </div>
+                            </div>
+                            <div style="background: #f8f8f8; padding: 15px; border-radius: 12px;">
+                                <h3>🚖 Transportation</h3>
+                                <div style="margin-top: 10px;">
+                                    <p style="font-weight: bold;">Airport Shuttle</p>
+                                    <p style="font-size: 12px; color: #666;">Every 2 hours • $15/person</p>
+                                </div>
+                                <div style="margin-top: 10px;">
+                                    <p style="font-weight: bold;">City Metro</p>
+                                    <p style="font-size: 12px; color: #666;">5 min walk • Day pass $8</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 074: Recommendations</h3>
+            </div>
+
+            <!-- Screen 075: Concierge Services -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="concierge-header">
+                        <h2>Services Menu</h2>
+                    </div>
+                    <div class="content">
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                            <div style="background: linear-gradient(135deg, #8E24AA 0%, #3F51B5 100%); color: white; padding: 30px; border-radius: 16px; text-align: center;">
+                                <span style="font-size: 32px;">🍽️</span>
+                                <p style="margin-top: 10px;">Restaurant Booking</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #00BCD4 0%, #009688 100%); color: white; padding: 30px; border-radius: 16px; text-align: center;">
+                                <span style="font-size: 32px;">🚖</span>
+                                <p style="margin-top: 10px;">Transportation</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%); color: white; padding: 30px; border-radius: 16px; text-align: center;">
+                                <span style="font-size: 32px;">🎫</span>
+                                <p style="margin-top: 10px;">Event Tickets</p>
+                            </div>
+                            <div style="background: linear-gradient(135deg, #FF5722 0%, #E91E63 100%); color: white; padding: 30px; border-radius: 16px; text-align: center;">
+                                <span style="font-size: 32px;">💐</span>
+                                <p style="margin-top: 10px;">Special Requests</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 075: Services Menu</h3>
+            </div>
+
+            <!-- HOUSEKEEPING APP -->
+            <!-- Screen 076: Room Status Dashboard -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="housekeeping-header">
+                        <h2>Housekeeping</h2>
+                        <p style="font-size: 14px; opacity: 0.9;">Floor 5 • 12 Rooms</p>
+                    </div>
+                    <div class="content">
+                        <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                            <button style="flex: 1; padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 8px;">Clean: 4</button>
+                            <button style="flex: 1; padding: 10px; background: #FF9800; color: white; border: none; border-radius: 8px;">Cleaning: 3</button>
+                            <button style="flex: 1; padding: 10px; background: #F44336; color: white; border: none; border-radius: 8px;">Dirty: 5</button>
+                        </div>
+                        <div class="room-card">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-weight: bold; font-size: 18px;">Room 501</span>
+                                <span class="status-dirty" style="padding: 4px 12px; border-radius: 20px; font-size: 12px;">DIRTY</span>
+                            </div>
+                            <p style="color: #666; font-size: 14px;">Check-out • Priority: High</p>
+                            <button style="width: 100%; margin-top: 10px; padding: 10px; background: #00BCD4; color: white; border: none; border-radius: 8px;">Start Cleaning</button>
+                        </div>
+                        <div class="room-card">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-weight: bold; font-size: 18px;">Room 502</span>
+                                <span class="status-cleaning" style="padding: 4px 12px; border-radius: 20px; font-size: 12px;">CLEANING</span>
+                            </div>
+                            <p style="color: #666; font-size: 14px;">In Progress • 15 min</p>
+                            <button style="width: 100%; margin-top: 10px; padding: 10px; background: #4CAF50; color: white; border: none; border-radius: 8px;">Mark Complete</button>
+                        </div>
+                        <div class="room-card">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-weight: bold; font-size: 18px;">Room 503</span>
+                                <span class="status-clean" style="padding: 4px 12px; border-radius: 20px; font-size: 12px;">CLEAN</span>
+                            </div>
+                            <p style="color: #666; font-size: 14px;">Ready • Inspected ✓</p>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 076: Room Status</h3>
+            </div>
+
+            <!-- Screen 077-079: Additional Housekeeping -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="housekeeping-header">
+                        <h2>Housekeeping Tasks</h2>
+                    </div>
+                    <div class="content">
+                        <div style="background: #f8f8f8; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+                            <h3 style="margin-bottom: 15px;">Room 501 Checklist</h3>
+                            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <input type="checkbox" checked style="margin-right: 10px;">
+                                <span>Bed Made</span>
+                            </label>
+                            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <input type="checkbox" checked style="margin-right: 10px;">
+                                <span>Bathroom Cleaned</span>
+                            </label>
+                            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <input type="checkbox" style="margin-right: 10px;">
+                                <span>Towels Replaced</span>
+                            </label>
+                            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <input type="checkbox" style="margin-right: 10px;">
+                                <span>Minibar Restocked</span>
+                            </label>
+                            <label style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <input type="checkbox" style="margin-right: 10px;">
+                                <span>Vacuum & Dust</span>
+                            </label>
+                        </div>
+                        <div style="background: #FFF8E1; padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+                            <h4 style="color: #F57C00; margin-bottom: 10px;">Special Instructions</h4>
+                            <p style="font-size: 14px;">Guest requested extra pillows and hypoallergenic bedding.</p>
+                        </div>
+                        <button class="btn-primary" style="background: linear-gradient(135deg, #00BCD4 0%, #009688 100%);">Complete Room</button>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screens 077-079: Tasks</h3>
+            </div>
+
+            <!-- ROOM SERVICE APP -->
+            <!-- Screen 080: Room Service Menu -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="roomservice-header">
+                        <h2>Room Service Orders</h2>
+                        <p style="font-size: 14px; opacity: 0.9;">Active Orders: 3</p>
+                    </div>
+                    <div class="content">
+                        <div style="background: #FFEBEE; border-left: 4px solid #F44336; padding: 15px; margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-weight: bold;">Room 512</span>
+                                <span style="color: #F44336; font-weight: bold;">NEW</span>
+                            </div>
+                            <p style="color: #666; font-size: 14px; margin-bottom: 10px;">1x Club Sandwich</p>
+                            <p style="color: #666; font-size: 14px; margin-bottom: 10px;">1x Orange Juice</p>
+                            <p style="color: #999; font-size: 12px;">Ordered 2 min ago</p>
+                            <button style="width: 100%; margin-top: 10px; padding: 10px; background: #FF5722; color: white; border: none; border-radius: 8px;">Accept Order</button>
+                        </div>
+                        <div style="background: #FFF8E1; border-left: 4px solid #FF9800; padding: 15px; margin-bottom: 15px;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span style="font-weight: bold;">Room 308</span>
+                                <span style="color: #FF9800; font-weight: bold;">PREPARING</span>
+                            </div>
+                            <p style="color: #666; font-size: 14px; margin-bottom: 10px;">2x Coffee</p>
+                            <p style="color: #666; font-size: 14px; margin-bottom: 10px;">1x Croissant</p>
+                            <p style="color: #999; font-size: 12px;">Ready in 5 min</p>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 080: Room Service</h3>
+            </div>
+
+            <!-- Screen 081: Delivery Status -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="roomservice-header">
+                        <h2>Delivery Status</h2>
+                    </div>
+                    <div class="content">
+                        <div style="background: #E8F5E9; border-radius: 12px; padding: 20px; text-align: center; margin-bottom: 20px;">
+                            <div style="width: 100px; height: 100px; background: #4CAF50; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+                                ✓
+                            </div>
+                            <h3>Order Delivered</h3>
+                            <p style="color: #666; margin: 10px 0;">Room 308 • 12:45 PM</p>
+                            <p style="color: #999; font-size: 14px;">Guest confirmed receipt</p>
+                        </div>
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                            <div style="background: #f8f8f8; padding: 20px; border-radius: 12px; text-align: center;">
+                                <p style="font-size: 32px; font-weight: bold; color: #FF5722;">12</p>
+                                <p style="color: #666; font-size: 14px;">Orders Today</p>
+                            </div>
+                            <div style="background: #f8f8f8; padding: 20px; border-radius: 12px; text-align: center;">
+                                <p style="font-size: 32px; font-weight: bold; color: #4CAF50;">18 min</p>
+                                <p style="color: #666; font-size: 14px;">Avg Delivery</p>
+                            </div>
+                        </div>
+                        <button class="btn-primary" style="margin-top: 20px; background: linear-gradient(135deg, #FF5722 0%, #E91E63 100%);">Back to Orders</button>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 081: Delivery Status</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

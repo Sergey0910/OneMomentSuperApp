@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneMoment Hotel Module - Screens 033-042</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1800px; margin: 0 auto; }
+        h1 { color: white; text-align: center; margin-bottom: 30px; font-size: 2.5em; }
+        .screens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+            gap: 30px;
+        }
+        .phone-mockup {
+            background: #000;
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .phone-screen {
+            background: white;
+            border-radius: 30px;
+            height: 700px;
+            overflow: hidden;
+            position: relative;
+        }
+        .search-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            color: white;
+        }
+        .search-box {
+            background: rgba(255,255,255,0.2);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+        }
+        .content { padding: 20px; }
+        .hotel-card {
+            background: #f8f8f8;
+            border-radius: 16px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .hotel-image {
+            height: 150px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+        .hotel-info {
+            padding: 15px;
+        }
+        .room-gallery {
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            padding: 20px;
+        }
+        .room-photo {
+            min-width: 250px;
+            height: 180px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .amenity {
+            background: #f0f0f0;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 12px;
+        }
+        .digital-key {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 20px;
+            border-radius: 20px;
+            padding: 30px;
+            color: white;
+            text-align: center;
+        }
+        .key-code {
+            font-size: 48px;
+            font-weight: bold;
+            margin: 20px 0;
+            font-family: monospace;
+        }
+        .btn-primary {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏨 OneMoment Hotel Module</h1>
+        
+        <div class="screens-grid">
+            <!-- Screen 033: Hotel Search -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="search-header">
+                        <h2>Find Hotels</h2>
+                        <div class="search-box">
+                            <span style="margin-right: 10px;">📍</span>
+                            <input type="text" placeholder="Dubai, UAE" style="background: none; border: none; color: white; flex: 1; outline: none;">
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                            <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 8px; flex: 1;">
+                                <p style="font-size: 12px;">Check-in</p>
+                                <p style="font-weight: bold;">Dec 15</p>
+                            </div>
+                            <div style="background: rgba(255,255,255,0.2); padding: 10px; border-radius: 8px; flex: 1;">
+                                <p style="font-size: 12px;">Check-out</p>
+                                <p style="font-weight: bold;">Dec 18</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content">
+                        <div class="hotel-card">
+                            <div class="hotel-image">🏨</div>
+                            <div class="hotel-info">
+                                <h3>Grand Plaza Hotel</h3>
+                                <p style="color: #999; font-size: 12px;">Downtown • 4.8 ⭐</p>
+                                <p style="color: #667eea; font-size: 18px; font-weight: bold;">$249/night</p>
+                            </div>
+                        </div>
+                        <div class="hotel-card">
+                            <div class="hotel-image">🌴</div>
+                            <div class="hotel-info">
+                                <h3>Beach Resort</h3>
+                                <p style="color: #999; font-size: 12px;">Beachfront • 4.9 ⭐</p>
+                                <p style="color: #667eea; font-size: 18px; font-weight: bold;">$389/night</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 033: Hotel Search</h3>
+            </div>
+
+            <!-- Screen 034: Hotel Details -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div style="height: 250px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-size: 60px; color: white;">
+                        🏨
+                    </div>
+                    <div class="content">
+                        <h2>Grand Plaza Hotel</h2>
+                        <p style="color: #999; margin-bottom: 15px;">Downtown Dubai • 4.8 ⭐ (2,451 reviews)</p>
+                        <div class="amenities-grid">
+                            <div class="amenity">🏊 Pool</div>
+                            <div class="amenity">🏋️ Gym</div>
+                            <div class="amenity">🍳 Breakfast</div>
+                            <div class="amenity">📶 WiFi</div>
+                            <div class="amenity">🚗 Parking</div>
+                            <div class="amenity">🍷 Bar</div>
+                        </div>
+                        <p style="margin: 20px 0; line-height: 1.5;">Experience luxury at Grand Plaza Hotel, featuring modern rooms, world-class dining, and exceptional service in the heart of Dubai.</p>
+                        <button class="btn-primary">View Rooms</button>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 034: Hotel Details</h3>
+            </div>
+
+            <!-- Screen 035: Room Selection -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div style="padding: 20px; background: #f8f8f8;">
+                        <h2>Select Room</h2>
+                    </div>
+                    <div class="room-gallery">
+                        <div class="room-photo">🛏️</div>
+                        <div class="room-photo">🛋️</div>
+                        <div class="room-photo">🚿</div>
+                    </div>
+                    <div class="content">
+                        <h3>Deluxe King Room</h3>
+                        <p style="color: #999; font-size: 14px; margin: 10px 0;">35 m² • City View • King Bed</p>
+                        <div style="display: flex; gap: 10px; margin: 15px 0;">
+                            <span style="background: #e8f4f8; padding: 5px 10px; border-radius: 6px; font-size: 12px;">Free Cancellation</span>
+                            <span style="background: #e8f4f8; padding: 5px 10px; border-radius: 6px; font-size: 12px;">Breakfast Included</span>
+                        </div>
+                        <div style="background: #f8f8f8; padding: 15px; border-radius: 12px; margin: 20px 0;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>Room Rate</span>
+                                <span>$249</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span>3 nights</span>
+                                <span>$747</span>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; font-weight: bold; padding-top: 10px; border-top: 1px solid #e0e0e0;">
+                                <span>Total</span>
+                                <span style="color: #667eea;">$747</span>
+                            </div>
+                        </div>
+                        <button class="btn-primary">Book Now</button>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 035: Room Selection</h3>
+            </div>
+
+            <!-- Screen 036: Booking Form -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div style="padding: 20px; background: #f8f8f8;">
+                        <h2>Guest Details</h2>
+                    </div>
+                    <div class="content">
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; color: #666; font-size: 14px;">First Name</label>
+                            <input type="text" value="Sergey" style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 8px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; color: #666; font-size: 14px;">Last Name</label>
+                            <input type="text" value="Petrov" style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 8px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; color: #666; font-size: 14px;">Email</label>
+                            <input type="email" value="sergey@example.com" style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 8px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; color: #666; font-size: 14px;">Phone</label>
+                            <input type="tel" value="+7 999 123 45 67" style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 8px;">
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; color: #666; font-size: 14px;">Special Requests</label>
+                            <textarea style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 8px; height: 80px;" placeholder="High floor, late check-out..."></textarea>
+                        </div>
+                        <button class="btn-primary">Proceed to Payment</button>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 036: Booking Form</h3>
+            </div>
+
+            <!-- Screen 037: Booking Confirmation -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div style="padding: 40px 20px; text-align: center;">
+                        <div style="width: 100px; height: 100px; background: #4CAF50; border-radius: 50%; margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+                            ✓
+                        </div>
+                        <h2>Booking Confirmed!</h2>
+                        <p style="color: #999; margin: 10px 0;">Confirmation #HTL2847395</p>
+                        <div style="background: #f8f8f8; padding: 20px; border-radius: 12px; margin: 30px 0; text-align: left;">
+                            <h3 style="margin-bottom: 15px;">Grand Plaza Hotel</h3>
+                            <div style="margin-bottom: 10px;">
+                                <p style="color: #999; font-size: 12px;">Check-in</p>
+                                <p style="font-weight: bold;">Dec 15, 2024 • 3:00 PM</p>
+                            </div>
+                            <div style="margin-bottom: 10px;">
+                                <p style="color: #999; font-size: 12px;">Check-out</p>
+                                <p style="font-weight: bold;">Dec 18, 2024 • 12:00 PM</p>
+                            </div>
+                            <div>
+                                <p style="color: #999; font-size: 12px;">Room</p>
+                                <p style="font-weight: bold;">Deluxe King Room</p>
+                            </div>
+                        </div>
+                        <button class="btn-primary">View Booking</button>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 037: Booking Confirmation</h3>
+            </div>
+
+            <!-- Screen 038: Digital Check-in -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div style="padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                        <h2>Digital Check-in</h2>
+                        <p>Complete your check-in online</p>
+                    </div>
+                    <div class="content">
+                        <div style="background: #f8f8f8; padding: 20px; border-radius: 12px; margin-bottom: 20px;">
+                            <h3 style="margin-bottom: 10px;">Upload Documents</h3>
+                            <button style="width: 100%; padding: 40px; border: 2px dashed #999; border-radius: 12px; background: white; cursor: pointer;">
+                                <span style="font-size: 24px;">📷</span><br>
+                                <span style="color: #999;">Scan Passport/ID</span>
+                            </button>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: block; margin-bottom: 8px; color: #666; font-size: 14px;">Arrival Time</label>
+                            <select style="width: 100%; padding: 12px; border: 1px solid #e0e0e0; border-radius: 8px;">
+                                <option>3:00 PM - 4:00 PM</option>
+                                <option>4:00 PM - 5:00 PM</option>
+                                <option>5:00 PM - 6:00 PM</option>
+                            </select>
+                        </div>
+                        <div style="margin-bottom: 20px;">
+                            <label style="display: flex; align-items: center;">
+                                <input type="checkbox" checked style="margin-right: 10px;">
+                                <span style="font-size: 14px;">I agree to hotel terms and conditions</span>
+                            </label>
+                        </div>
+                        <button class="btn-primary">Complete Check-in</button>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 038: Digital Check-in</h3>
+            </div>
+
+            <!-- Screen 039: Digital Room Key -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="digital-key">
+                        <p style="font-size: 14px; opacity: 0.9;">Digital Room Key</p>
+                        <div class="key-code">ROOM 512</div>
+                        <div style="width: 200px; height: 200px; background: white; margin: 20px auto; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                            <div style="width: 150px; height: 150px; background: black; opacity: 0.8;"></div>
+                        </div>
+                        <p style="font-size: 12px; opacity: 0.8;">Hold near door lock to unlock</p>
+                    </div>
+                    <div class="content">
+                        <button class="btn-primary">Share Key</button>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 039: Digital Room Key</h3>
+            </div>
+
+            <!-- Screens 040-042: Additional Hotel Features -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="content">
+                        <h2>Hotel Services</h2>
+                        <div style="display: grid; gap: 10px; margin-top: 20px;">
+                            <div style="background: #f8f8f8; padding: 20px; border-radius: 12px;">
+                                <h3>🍽️ Room Service</h3>
+                                <p style="font-size: 12px; color: #999;">Order food to your room</p>
+                            </div>
+                            <div style="background: #f8f8f8; padding: 20px; border-radius: 12px;">
+                                <h3>🧹 Housekeeping</h3>
+                                <p style="font-size: 12px; color: #999;">Request cleaning</p>
+                            </div>
+                            <div style="background: #f8f8f8; padding: 20px; border-radius: 12px;">
+                                <h3>🛎️ Concierge</h3>
+                                <p style="font-size: 12px; color: #999;">Local recommendations</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screens 040-042: Hotel Services</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

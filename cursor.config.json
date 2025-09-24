@@ -1,0 +1,104 @@
+{
+  "workspaceFolder": "/Users/whysophie/Desktop/OneMomentSuperApp",
+  "features": {
+    "codebaseIndexing": true,
+    "aiAutoComplete": true,
+    "contextualSearch": true,
+    "gitIntegration": true
+  },
+  "ai": {
+    "model": "gpt-4",
+    "temperature": 0.3,
+    "contextWindow": 8000,
+    "includeFiles": [
+      ".cursorrules",
+      "PROJECT_RULES.md",
+      "TOOLBOX.md",
+      "ARCHITECTURE_MODULE_FEDERATION.md"
+    ],
+    "excludeFolders": [
+      "node_modules",
+      ".git",
+      "build",
+      "dist"
+    ]
+  },
+  "codeSync": {
+    "enabled": true,
+    "autoFetch": true,
+    "fetchInterval": 30,
+    "sources": [
+      {
+        "type": "github",
+        "repo": "whysophie/OneMomentSuperApp",
+        "branch": "main",
+        "paths": {
+          "/apps/guest-app/screens/*": "apps/guest-app/screens/",
+          "/packages/shared-ui/*": "packages/shared-ui/",
+          "/services/*": "services/"
+        }
+      }
+    ]
+  },
+  "fileWatchers": [
+    {
+      "pattern": "**/*.tsx",
+      "command": "npm run lint:fix"
+    },
+    {
+      "pattern": "**/*.test.tsx",
+      "command": "npm test -- --watch"
+    }
+  ],
+  "snippets": {
+    "screen": {
+      "prefix": "omscreen",
+      "body": [
+        "import React from 'react';",
+        "import { View, Text, StyleSheet } from 'react-native';",
+        "",
+        "type T${1:ScreenName}Props = {",
+        "  // props here",
+        "};",
+        "",
+        "export const ${1:ScreenName}: React.FC<T${1:ScreenName}Props> = () => {",
+        "  return (",
+        "    <View style={styles.container}>",
+        "      <Text>${1:ScreenName}</Text>",
+        "    </View>",
+        "  );",
+        "};",
+        "",
+        "const styles = StyleSheet.create({",
+        "  container: {",
+        "    flex: 1,",
+        "  },",
+        "});"
+      ]
+    },
+    "api": {
+      "prefix": "omapi",
+      "body": [
+        "try {",
+        "  const response = await pb.collection('${1:collection}').${2:getList}();",
+        "  return response;",
+        "} catch (error) {",
+        "  console.error('API Error:', error);",
+        "  throw error;",
+        "}"
+      ]
+    }
+  },
+  "tasks": {
+    "downloadFromClaude": {
+      "label": "Download from Claude/GitHub",
+      "command": "sh",
+      "args": ["scripts/download-from-github.sh", "${input:githubUrl}"]
+    },
+    "updateAsana": {
+      "label": "Update Asana Status",
+      "command": "sh",
+      "args": ["scripts/update-asana.sh", "${input:screenId}", "${input:status}"]
+    }
+  }
+}

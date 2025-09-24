@@ -1,0 +1,126 @@
+# 🚀 OneMoment SuperApp - Cursor AI Rules
+# Эти правила помогают Cursor понимать структуру проекта
+
+## PROJECT CONTEXT
+You are working on OneMoment SuperApp - a revolutionary travel super-app with 81 screens.
+The project uses React Native, TypeScript (strict mode), Module Federation, and PocketBase.
+
+## PROJECT STRUCTURE
+```
+/OneMomentSuperApp
+├── /apps
+│   ├── /guest-app      # 51 screens
+│   ├── /waiter-app     # 7 screens
+│   ├── /kitchen-app    # 5 screens
+│   └── /admin-app      # 8 screens
+├── /packages
+│   ├── /shared-ui      # Common components
+│   ├── /api-client     # PocketBase client
+│   └── /auth           # Authentication
+├── /documentation      # All specs
+└── /screens           # HTML prototypes
+```
+
+## CODING STANDARDS
+
+### TypeScript Rules:
+- ALWAYS use strict mode (19 flags enabled)
+- ALWAYS define types with T prefix: `type TMenuItem = {...}`
+- NEVER use `any` type
+- ALWAYS validate with Zod schemas
+
+### Component Structure:
+```typescript
+// ComponentName.tsx
+export const ComponentName: React.FC<TComponentProps> = ({ props }) => {
+  // hooks first
+  // state second
+  // effects third
+  // handlers fourth
+  // render last
+}
+```
+
+### Naming Conventions:
+- Components: PascalCase
+- Functions: camelCase
+- Constants: UPPER_SNAKE_CASE
+- Types: TPrefix (TMenuItem, TUser)
+
+## LIBRARIES TO USE (from TOOLBOX.md)
+- PocketBase for backend
+- TON Connect for crypto payments
+- react-native-qr-code-scanner for QR
+- react-native-gifted-chat for chat
+- react-native-otp-entry for OTP
+- Mapbox GL for maps
+- OneSignal for push
+- Mixpanel for analytics
+
+## IMPORT ORDER
+1. React/React Native
+2. Third-party libraries
+3. Local components
+4. Types
+5. Styles
+6. Assets
+
+## TESTING
+- Minimum 85% coverage
+- Test file next to component
+- Use React Native Testing Library
+
+## PERFORMANCE
+- Screen load < 300ms
+- 60 FPS animations
+- Bundle size < 20MB total
+
+## GIT WORKFLOW
+- Branch from main
+- Prefix: feat/, fix/, docs/
+- Commit: conventional commits
+- PR required for merge
+
+## API PATTERNS
+```typescript
+// Always use try-catch
+try {
+  const data = await api.get('/endpoint');
+  return data;
+} catch (error) {
+  handleError(error);
+}
+```
+
+## STATE MANAGEMENT
+- Zustand for global state
+- React Query for server state
+- Local state for UI only
+
+## IMPORTANT FILES
+- PROJECT_RULES.md - main rules
+- ARCHITECTURE_MODULE_FEDERATION.md - architecture
+- SCREENS_SPECIFICATION.md - all 81 screens
+- TOOLBOX.md - installed libraries
+
+## SCREEN DEVELOPMENT CHECKLIST
+- [ ] Check documentation in /documentation
+- [ ] Use HTML prototype from /screens as reference
+- [ ] Follow TypeScript interfaces
+- [ ] Write tests first (TDD)
+- [ ] Update Asana status
+- [ ] Performance metrics met
+
+## NEVER DO
+- Never use console.log in production
+- Never commit sensitive data
+- Never skip TypeScript checks
+- Never ignore performance metrics
+- Never use inline styles
+
+## ALWAYS DO
+- Always check existing components first
+- Always use installed libraries from TOOLBOX.md
+- Always write tests
+- Always update documentation
+- Always follow Module Federation pattern

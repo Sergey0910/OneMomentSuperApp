@@ -1,0 +1,52 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": false,
+  "tsx": true,
+  "tailwind": {
+    "config": "./tailwind.config.ts",
+    "css": "./src/globals.css",
+    "baseColor": "slate",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "registries": [
+    {
+      "name": "shadcn",
+      "url": "https://ui.shadcn.com/r",
+      "components": "base"
+    },
+    {
+      "name": "ray-ui",
+      "url": "https://registry.ray-ui.com",
+      "components": 542
+    },
+    {
+      "name": "magic-ui", 
+      "url": "https://registry.magic-ui.com",
+      "components": 150
+    },
+    {
+      "name": "aceternity",
+      "url": "https://registry.aceternity.com",
+      "components": 60
+    },
+    {
+      "name": "tremor",
+      "url": "https://registry.tremor.so",
+      "components": 35
+    }
+  ],
+  "react-native": {
+    "enabled": true,
+    "library": "react-native-reusables",
+    "styling": "nativewind"
+  }
+}

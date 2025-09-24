@@ -1,0 +1,301 @@
+{
+  "project": "OneMomentSuperApp",
+  "version": "1.0.0",
+  "description": "Backend Components Map - Shadcn/ui для бэкенда",
+  
+  "core_components": {
+    "authentication": {
+      "primary": "SuperTokens",
+      "npm": "@supertokens/node",
+      "version": "^16.0.0",
+      "features": [
+        "Recipe-based architecture",
+        "Multi-tenant support",
+        "JWT + Refresh tokens",
+        "Social login providers"
+      ],
+      "alternatives": ["clerk", "better-auth", "lucia-auth"]
+    },
+    
+    "database": {
+      "orm": {
+        "primary": "Prisma",
+        "npm": "@prisma/client",
+        "version": "^5.8.0",
+        "schema_location": "/prisma/schema.prisma"
+      },
+      "lightweight": {
+        "primary": "Drizzle",
+        "npm": "drizzle-orm",
+        "version": "^0.29.0",
+        "for": ["real-time queries", "performance critical"]
+      }
+    },
+    
+    "graphql": {
+      "federation": {
+        "primary": "Apollo Federation",
+        "npm": "@apollo/federation",
+        "version": "^2.5.0",
+        "subgraphs": ["restaurants", "hotels", "translator", "esim"]
+      },
+      "instant_api": {
+        "primary": "Hasura",
+        "docker": "hasura/graphql-engine:v2.36.0",
+        "features": ["1M+ subscriptions", "Auto-generated CRUD"]
+      }
+    },
+    
+    "message_queue": {
+      "primary": "BullMQ",
+      "npm": "bullmq",
+      "version": "^5.1.0",
+      "redis": "^7.2.0",
+      "use_cases": ["order processing", "notifications", "emails"]
+    },
+    
+    "real_time": {
+      "primary": "GraphQL Subscriptions",
+      "npm": "graphql-ws",
+      "version": "^5.14.0",
+      "transport": "WebSocket + Redis PubSub"
+    },
+    
+    "payment": {
+      "blockchain": {
+        "primary": "TON SDK",
+        "npm": "@ton/ton",
+        "version": "^14.0.0",
+        "wallet": "WalletContractV4"
+      },
+      "traditional": {
+        "primary": "Stripe",
+        "npm": "stripe",
+        "version": "^14.0.0"
+      }
+    }
+  },
+  
+  "microservices": {
+    "restaurants": {
+      "database": {
+        "schema": "restaurant_schema.prisma",
+        "models": ["Restaurant", "Menu", "MenuItem", "Order", "Table", "Review"]
+      },
+      "api_components": {
+        "pos_integration": {
+          "primary": "Square POS API",
+          "npm": "square",
+          "features": ["Menu sync", "Order management", "Inventory"]
+        },
+        "qr_scanner": {
+          "npm": "qrcode",
+          "websocket": "socket.io"
+        }
+      },
+      "background_jobs": [
+        "process-order",
+        "notify-kitchen",
+        "update-inventory",
+        "send-receipt"
+      ]
+    },
+    
+    "hotels": {
+      "database": {
+        "schema": "hotel_schema.prisma",
+        "models": ["Hotel", "Room", "Booking", "Guest", "Service"]
+      },
+      "api_components": {
+        "channel_manager": {
+          "primary": "Booking.com Connectivity API",
+          "alternative": "Zodomus API",
+          "features": ["Availability sync", "Rate management"]
+        },
+        "pms_integration": {
+          "primary": "Opera Cloud API",
+          "features": ["Check-in/out", "Room status"]
+        }
+      }
+    },
+    
+    "translator": {
+      "database": {
+        "schema": "translator_schema.prisma",
+        "models": ["Translation", "Session", "Language"]
+      },
+      "api_components": {
+        "translation_engine": {
+          "primary": "DeepL API",
+          "npm": "deepl-node",
+          "languages": 31,
+          "alternative": "Azure Translator"
+        },
+        "speech_to_text": {
+          "primary": "Whisper API",
+          "npm": "@openai/whisper"
+        }
+      }
+    },
+    
+    "esim": {
+      "database": {
+        "schema": "esim_schema.prisma",
+        "models": ["ESIMPlan", "Activation", "Usage", "Provider"]
+      },
+      "api_components": {
+        "provisioning": {
+          "primary": "Airalo API",
+          "features": ["QR generation", "Activation tracking"]
+        }
+      }
+    }
+  },
+  
+  "code_generators": {
+    "api": {
+      "openapi": {
+        "tool": "OpenAPI Generator",
+        "npm": "@openapitools/openapi-generator-cli",
+        "config": "openapi-config.yaml"
+      },
+      "graphql": {
+        "tool": "GraphQL Code Generator",
+        "npm": "@graphql-codegen/cli",
+        "config": "codegen.yml"
+      }
+    },
+    
+    "database": {
+      "prisma": {
+        "commands": [
+          "prisma generate",
+          "prisma migrate dev",
+          "prisma db push"
+        ]
+      },
+      "seeding": {
+        "tool": "Prisma Seed",
+        "file": "prisma/seed.ts"
+      }
+    },
+    
+    "crud": {
+      "nestjs": {
+        "tool": "@nestjs/cli",
+        "commands": [
+          "nest g resource",
+          "nest g module",
+          "nest g service"
+        ]
+      },
+      "admin_panel": {
+        "tool": "AdminJS",
+        "npm": "@adminjs/express"
+      }
+    },
+    
+    "types": {
+      "zod_schemas": {
+        "tool": "prisma-zod-generator",
+        "auto_generate": true
+      },
+      "dto": {
+        "tool": "class-validator",
+        "npm": "class-validator"
+      }
+    }
+  },
+  
+  "ai_tools": {
+    "code_generation": {
+      "primary": "Cursor AI",
+      "cost": "$20/month",
+      "productivity": "+55%",
+      "features": ["Agent mode", "Multi-file edit", "Context awareness"]
+    },
+    "pair_programming": {
+      "primary": "GitHub Copilot",
+      "cost": "$10/month",
+      "productivity": "+28%"
+    },
+    "terminal": {
+      "primary": "Aider",
+      "cost": "Free",
+      "features": ["Git integration", "Multi-file coordination"]
+    }
+  },
+  
+  "devops_components": {
+    "monitoring": {
+      "traces": "OpenTelemetry",
+      "metrics": "Prometheus",
+      "logs": "Winston + Grafana Loki",
+      "apm": "New Relic"
+    },
+    "gateway": {
+      "primary": "Kong Gateway",
+      "plugins": ["rate-limiting", "jwt", "cors", "graphql"]
+    },
+    "ci_cd": {
+      "pipeline": "GitHub Actions",
+      "schema_validation": "Apollo Rover CLI",
+      "testing": "Jest + Supertest"
+    }
+  },
+  
+  "mvp_screens_backend_map": {
+    "001_Splash": {
+      "endpoints": [],
+      "components": ["health-check"]
+    },
+    "002_PhoneLogin": {
+      "endpoints": ["POST /auth/send-otp"],
+      "components": ["SuperTokens.phoneAuth", "BullMQ.sendSMS"]
+    },
+    "003_OTP": {
+      "endpoints": ["POST /auth/verify-otp"],
+      "components": ["SuperTokens.verifyOTP", "JWT.generate"]
+    },
+    "004_Home": {
+      "endpoints": ["GET /api/dashboard"],
+      "components": ["Hasura.query", "Redis.cache"]
+    },
+    "005_QRScanner": {
+      "endpoints": ["POST /tables/verify"],
+      "components": ["WebSocket.connect", "Redis.pubsub"]
+    },
+    "006_TableConfirmation": {
+      "endpoints": ["GET /restaurants/:id"],
+      "components": ["Prisma.findUnique", "GraphQL.query"]
+    },
+    "007_MenuCategories": {
+      "endpoints": ["GET /menu/categories"],
+      "components": ["Hasura.subscription", "CDN.images"]
+    },
+    "008_CategoryItems": {
+      "endpoints": ["GET /menu/items"],
+      "components": ["Prisma.findMany", "ElasticSearch.filter"]
+    },
+    "009_ItemDetail": {
+      "endpoints": ["GET /menu/items/:id"],
+      "components": ["GraphQL.query", "Three.js.preview"]
+    },
+    "010_Cart": {
+      "endpoints": ["POST /cart/update"],
+      "components": ["Redis.session", "Zustand.sync"]
+    },
+    "011_PaymentMethod": {
+      "endpoints": ["GET /payment/methods"],
+      "components": ["TON.connect", "Stripe.elements"]
+    },
+    "012_PaymentProcess": {
+      "endpoints": ["POST /payment/process"],
+      "components": ["TON.transaction", "BullMQ.processPayment"]
+    },
+    "013_OrderSuccess": {
+      "endpoints": ["POST /orders/confirm"],
+      "components": ["WebSocket.notify", "Push.notification"]
+    }
+  }
+}

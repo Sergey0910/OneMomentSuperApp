@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OneMoment Staff Apps - Screens 052-071</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #333 0%, #555 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        .container { max-width: 1800px; margin: 0 auto; }
+        h1 { color: white; text-align: center; margin-bottom: 30px; font-size: 2.5em; }
+        .screens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(375px, 1fr));
+            gap: 30px;
+        }
+        .phone-mockup {
+            background: #000;
+            border-radius: 40px;
+            padding: 10px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .phone-screen {
+            background: white;
+            border-radius: 30px;
+            height: 700px;
+            overflow: hidden;
+            position: relative;
+        }
+        .waiter-header {
+            background: #2196F3;
+            padding: 20px;
+            color: white;
+        }
+        .kitchen-header {
+            background: #FF9800;
+            padding: 20px;
+            color: white;
+        }
+        .admin-header {
+            background: #9C27B0;
+            padding: 20px;
+            color: white;
+        }
+        .order-card {
+            background: #f8f8f8;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+        .table-badge {
+            display: inline-block;
+            background: #2196F3;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-right: 10px;
+        }
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+        }
+        .status-new { background: #FFF3E0; color: #F57C00; }
+        .status-preparing { background: #E3F2FD; color: #1976D2; }
+        .status-ready { background: #E8F5E9; color: #388E3C; }
+        .kitchen-order {
+            background: white;
+            border-left: 4px solid #FF9800;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .timer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #FF9800;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .stat-value {
+            font-size: 32px;
+            font-weight: bold;
+            color: #9C27B0;
+        }
+        .btn-action {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .btn-accept { background: #4CAF50; color: white; }
+        .btn-ready { background: #2196F3; color: white; }
+        .btn-complete { background: #FF9800; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>👨‍🍳 Staff Applications</h1>
+        
+        <div class="screens-grid">
+            <!-- WAITER APP -->
+            <!-- Screen 052: Waiter Login -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div style="padding: 40px 20px; text-align: center;">
+                        <div style="width: 100px; height: 100px; background: #2196F3; border-radius: 50%; margin: 0 auto 30px; display: flex; align-items: center; justify-content: center; color: white; font-size: 48px;">
+                            👤
+                        </div>
+                        <h2>Waiter Login</h2>
+                        <div style="margin: 40px 0;">
+                            <input type="text" placeholder="Employee ID" style="width: 100%; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 15px;">
+                            <input type="password" placeholder="PIN Code" style="width: 100%; padding: 15px; border: 1px solid #e0e0e0; border-radius: 8px; margin-bottom: 15px;">
+                        </div>
+                        <button style="width: 100%; padding: 16px; background: #2196F3; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold;">Sign In</button>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 052: Waiter Login</h3>
+            </div>
+
+            <!-- Screen 053: Orders List -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="waiter-header">
+                        <h2>Active Orders</h2>
+                        <p style="font-size: 14px; opacity: 0.9;">John Smith • Shift: 12:00 - 20:00</p>
+                    </div>
+                    <div style="padding: 20px;">
+                        <div class="order-card">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span class="table-badge">Table 12</span>
+                                <span class="status-badge status-new">NEW</span>
+                            </div>
+                            <p style="font-weight: bold;">Order #2847</p>
+                            <p style="color: #666; font-size: 14px;">2 items • $34.50</p>
+                            <p style="color: #999; font-size: 12px; margin-top: 5px;">2 min ago</p>
+                        </div>
+                        <div class="order-card">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span class="table-badge">Table 8</span>
+                                <span class="status-badge status-preparing">PREPARING</span>
+                            </div>
+                            <p style="font-weight: bold;">Order #2846</p>
+                            <p style="color: #666; font-size: 14px;">5 items • $78.90</p>
+                            <p style="color: #999; font-size: 12px; margin-top: 5px;">15 min ago</p>
+                        </div>
+                        <div class="order-card">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                <span class="table-badge">Table 3</span>
+                                <span class="status-badge status-ready">READY</span>
+                            </div>
+                            <p style="font-weight: bold;">Order #2845</p>
+                            <p style="color: #666; font-size: 14px;">3 items • $45.20</p>
+                            <p style="color: #999; font-size: 12px; margin-top: 5px;">25 min ago</p>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 053: Orders List</h3>
+            </div>
+
+            <!-- Screen 054: Order Details -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="waiter-header">
+                        <h2>Order #2847</h2>
+                        <p style="font-size: 14px; opacity: 0.9;">Table 12</p>
+                    </div>
+                    <div style="padding: 20px;">
+                        <div style="background: #f8f8f8; padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+                            <h3 style="margin-bottom: 15px;">Items</h3>
+                            <div style="margin-bottom: 10px;">
+                                <p style="font-weight: bold;">1x Carbonara</p>
+                                <p style="color: #666; font-size: 14px;">No onions</p>
+                                <p style="color: #2196F3; font-weight: bold;">$18.90</p>
+                            </div>
+                            <div>
+                                <p style="font-weight: bold;">1x Caesar Salad</p>
+                                <p style="color: #666; font-size: 14px;">Large size</p>
+                                <p style="color: #2196F3; font-weight: bold;">$12.50</p>
+                            </div>
+                        </div>
+                        <div style="background: #FFF3E0; padding: 15px; border-radius: 12px; margin-bottom: 20px;">
+                            <h3 style="color: #F57C00; margin-bottom: 10px;">Customer Notes</h3>
+                            <p style="color: #666;">Allergic to nuts. Please ensure no cross-contamination.</p>
+                        </div>
+                        <button class="btn-accept" style="width: 100%; margin-bottom: 10px;">Accept Order</button>
+                        <button style="width: 100%; padding: 12px; border: 2px solid #e0e0e0; background: white; border-radius: 8px;">Request Kitchen Update</button>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 054: Order Details</h3>
+            </div>
+
+            <!-- KITCHEN APP -->
+            <!-- Screen 059: Kitchen Login -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="kitchen-header">
+                        <h2>Kitchen Display</h2>
+                        <p style="font-size: 14px; opacity: 0.9;">Station: Main Kitchen</p>
+                    </div>
+                    <div style="padding: 20px; text-align: center;">
+                        <h3 style="margin: 40px 0;">Select Station</h3>
+                        <div style="display: grid; gap: 15px;">
+                            <button style="padding: 20px; background: #FF9800; color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold;">🍳 Main Kitchen</button>
+                            <button style="padding: 20px; background: #4CAF50; color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold;">🥗 Cold Station</button>
+                            <button style="padding: 20px; background: #2196F3; color: white; border: none; border-radius: 12px; font-size: 18px; font-weight: bold;">🍰 Dessert Station</button>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 059: Kitchen Login</h3>
+            </div>
+
+            <!-- Screen 060: Orders Queue -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="kitchen-header">
+                        <h2>Orders Queue</h2>
+                        <p style="font-size: 14px; opacity: 0.9;">5 Active Orders</p>
+                    </div>
+                    <div style="padding: 20px;">
+                        <div class="kitchen-order">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <span style="font-weight: bold; font-size: 18px;">Order #2847</span>
+                                <span class="timer">02:45</span>
+                            </div>
+                            <div style="margin-bottom: 10px;">
+                                <p style="font-weight: bold;">1x Carbonara</p>
+                                <p style="color: #FF5722; font-size: 14px;">⚠️ No onions</p>
+                            </div>
+                            <button class="btn-ready" style="width: 100%;">Mark as Ready</button>
+                        </div>
+                        <div class="kitchen-order" style="border-color: #4CAF50;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 15px;">
+                                <span style="font-weight: bold; font-size: 18px;">Order #2846</span>
+                                <span class="timer" style="color: #4CAF50;">08:30</span>
+                            </div>
+                            <div style="margin-bottom: 10px;">
+                                <p style="font-weight: bold;">2x Pizza Margherita</p>
+                                <p style="font-weight: bold;">1x Pasta Bolognese</p>
+                            </div>
+                            <div style="display: flex; gap: 10px;">
+                                <button class="btn-complete" style="flex: 1;">Start Preparing</button>
+                                <button style="flex: 1; padding: 12px; border: 2px solid #e0e0e0; background: white; border-radius: 8px;">Delay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 060: Orders Queue</h3>
+            </div>
+
+            <!-- ADMIN APP -->
+            <!-- Screen 064: Admin Dashboard -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="admin-header">
+                        <h2>Restaurant Admin</h2>
+                        <p style="font-size: 14px; opacity: 0.9;">Bella Italia</p>
+                    </div>
+                    <div style="padding: 20px;">
+                        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px;">
+                            <div class="stat-card">
+                                <p style="color: #666; font-size: 14px;">Today's Revenue</p>
+                                <p class="stat-value">$3,847</p>
+                                <p style="color: #4CAF50; font-size: 12px;">↑ 12%</p>
+                            </div>
+                            <div class="stat-card">
+                                <p style="color: #666; font-size: 14px;">Orders</p>
+                                <p class="stat-value">142</p>
+                                <p style="color: #4CAF50; font-size: 12px;">↑ 8%</p>
+                            </div>
+                            <div class="stat-card">
+                                <p style="color: #666; font-size: 14px;">Avg Order</p>
+                                <p class="stat-value">$27</p>
+                                <p style="color: #FF5722; font-size: 12px;">↓ 3%</p>
+                            </div>
+                            <div class="stat-card">
+                                <p style="color: #666; font-size: 14px;">Tables</p>
+                                <p class="stat-value">18/25</p>
+                                <p style="color: #666; font-size: 12px;">72% full</p>
+                            </div>
+                        </div>
+                        <div style="margin-top: 30px;">
+                            <h3 style="margin-bottom: 15px;">Quick Actions</h3>
+                            <div style="display: grid; gap: 10px;">
+                                <button style="padding: 15px; background: #9C27B0; color: white; border: none; border-radius: 8px; text-align: left;">
+                                    📊 View Reports
+                                </button>
+                                <button style="padding: 15px; background: #9C27B0; color: white; border: none; border-radius: 8px; text-align: left;">
+                                    🍽️ Edit Menu
+                                </button>
+                                <button style="padding: 15px; background: #9C27B0; color: white; border: none; border-radius: 8px; text-align: left;">
+                                    👥 Staff Management
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screen 064: Admin Dashboard</h3>
+            </div>
+
+            <!-- Additional Staff Screens Summary -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div style="padding: 20px;">
+                        <h2 style="text-align: center; margin-bottom: 30px;">Staff Apps Overview</h2>
+                        <div style="display: grid; gap: 15px;">
+                            <div style="background: #E3F2FD; padding: 20px; border-radius: 12px;">
+                                <h3 style="color: #1976D2;">Waiter App (7 screens)</h3>
+                                <p style="margin-top: 10px;">✓ Login & Authentication</p>
+                                <p>✓ Order Management</p>
+                                <p>✓ Table Service</p>
+                                <p>✓ Payment Processing</p>
+                            </div>
+                            <div style="background: #FFF3E0; padding: 20px; border-radius: 12px;">
+                                <h3 style="color: #F57C00;">Kitchen App (5 screens)</h3>
+                                <p style="margin-top: 10px;">✓ Station Selection</p>
+                                <p>✓ Order Queue</p>
+                                <p>✓ Preparation Timing</p>
+                                <p>✓ Inventory Alerts</p>
+                            </div>
+                            <div style="background: #F3E5F5; padding: 20px; border-radius: 12px;">
+                                <h3 style="color: #7B1FA2;">Admin App (8 screens)</h3>
+                                <p style="margin-top: 10px;">✓ Analytics Dashboard</p>
+                                <p>✓ Menu Management</p>
+                                <p>✓ Staff Control</p>
+                                <p>✓ Financial Reports</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h3 style="color: white; text-align: center; margin-top: 20px;">Screens 055-071: Complete</h3>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
